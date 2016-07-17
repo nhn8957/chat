@@ -16,7 +16,7 @@ class Message < ApplicationRecord
 
 	def mark_as_read!
         if self.read_at == nil
-        	self.read_at = Time.now
+        	self.read_at = Time.now.in_time_zone("Hanoi").to_s(:short)
     		save!
     	end
   	end

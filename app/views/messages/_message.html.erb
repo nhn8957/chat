@@ -4,11 +4,11 @@
     	From: <%= message.sender_name %>	
     </h3>
 	<%if message.read_at == nil %> 
-		<strong><p class="card-text">Body: <%= message.body %></p></strong>
+		<strong><p class="card-text"><%= message.body %></p></strong>
 	<% else %>
 		<p class="card-text">You can only view this message once (which you have!)</p>
 	<% end %>
- 	<p class="card-text"><small class="text-muted">Sent: <%= message.created_at %></small></p>
+ 	<p class="card-text"><small class="text-muted">Sent: <%= message.created_at.in_time_zone("Hanoi").to_s(:short) %></small></p>
 	<% message.mark_as_read! %>
   </div>
 </div>

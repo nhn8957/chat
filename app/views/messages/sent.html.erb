@@ -9,7 +9,7 @@
 	<% if message.read_at == nil %>
     	<p class="card-text">Unread</p>
 	<% else %>
-		<p class="card-text">Read: <%= message.read_at %></p>
+		<p class="card-text">Read: <%= message.read_at.in_time_zone("Hanoi").to_s(:short) %></p>
 	<% end %>
 
   </div>
