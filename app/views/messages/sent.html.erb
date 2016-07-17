@@ -1,0 +1,19 @@
+<h1>All messages sent by <%= @user.name %></h1>
+
+<% @messages.each do |message| %>
+<div class="card">
+  <div class="card-block">
+	
+    <h3 class="card-title">To: <%= message.recipient_name %></h3>
+	
+	<% if message.read_at == nil %>
+    	<p class="card-text">Unread</p>
+	<% else %>
+		<p class="card-text">Read: <%= message.read_at %></p>
+	<% end %>
+
+  </div>
+</div>
+
+	<% end %>
+
