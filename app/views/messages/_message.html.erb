@@ -4,7 +4,7 @@
     	From: <%= message.sender_name %>	
     </h3>
 	<%if message.read_at == nil %> 
-		<p class="card-text">Body: <%= message.body %></p>
+		<strong><p class="card-text">Body: <%= message.body %></p></strong>
 	<% else %>
 		<p class="card-text">You can only view this message once (which you have!)</p>
 	<% end %>
